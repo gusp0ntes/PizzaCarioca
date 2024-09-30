@@ -1,0 +1,110 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 10;
+}
+
+.menu {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.menu-itens {
+    display: flex;
+    align-items: center;
+}
+
+.menu-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 180px;
+    padding: 10px 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.menu.fixed .menu-box {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 10px 0;
+}
+
+.menu .bx-menu {
+    color: #f2f2f2;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu .logo img {
+    width: 140px;
+}
+
+.menu-itens {
+    display: flex;
+    list-style: none;
+}
+
+.menu-itens li {
+    padding-right: 50px;
+}
+
+.menu-itens li a {
+    text-decoration: none;
+    color: #f2f2f2;
+    transition: color 0.3s ease;
+}
+
+.menu-itens li:last-child {
+    padding-right: 0;
+}
+
+.menu .filias {
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.menu .filias i {
+    color: rgb(228, 110, 0);
+}
+
+.menu select {
+    border: 0px;
+    background: transparent;
+    color: #f2f2f2;
+    outline: none;
+}
+
+.menu select option {
+    color: #222;
+}
+
+.menu .login {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    color: #222;
+}
+
+.menu .login i {
+    color: #222;
+}

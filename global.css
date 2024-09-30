@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Podkova", serif;
+    /* font-family: "Cabin Sketch", sans-serif; */
+    font-optical-sizing: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn {
+    border: 0px;
+    width: 170px;
+    height: 40px;
+    background-color: var(--button-color);
+    color: #f2f2f2;
+    border-radius: 10px;
+    margin-top: 20px;
+
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.btn a {
+    text-decoration: none;
+    color: #f2f2f2;
+}

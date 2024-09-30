@@ -1,0 +1,94 @@
+@media screen and (max-width:768px) {
+    .menu-itens {
+        display: none;
+    }
+
+    .menu .bx-menu {
+        display: block;
+    }
+
+    .home .chamada h1 {
+        font-size: 50px;
+    }
+
+    .contato {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #contact-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .contato {
+        flex-direction: column-reverse;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-icons i {
+        color: #222;
+    }
+
+    #contact-info p {
+        color: #222;
+        padding-right: 0px;
+    }
+
+    #contact-info p:last-child {
+        padding-right: 0px;
+    }
+
+    .cardapio-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px;
+    }
+
+    .cardapio-container .btn {
+        width: 100% !important;
+    }
+
+    .sobre-nos {
+        height: 100vh;
+        background-color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    
+    .sobre-nos .text-sobre {
+        width: 100%;
+        padding: 0px;
+        text-align: justify;
+    }
+    
+    .sobre-nos .text-sobre h1 {
+        color: red;
+        font-size: 50px;
+        font-family: "Cabin Sketch", sans-serif;
+    }
+    
+    .sobre-nos .text-sobre p {
+        color: #f2f2f2;
+    }
+
+
+
+    
+
+}

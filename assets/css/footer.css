@@ -1,0 +1,51 @@
+footer {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Seção de Navegação no Footer */
+.footer-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #00adb5;
+}
+
+/* Seção de Redes Sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00adb5;
+}
+
+/* Texto de Copyright */
+.footer-copyright {
+    color: #ccc;
+    font-size: 14px;
+}
