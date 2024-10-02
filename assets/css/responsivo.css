@@ -63,7 +63,7 @@
     }
 
     .sobre-nos {
-        height: 100vh;
+        height: 70vh;
         background-color: #222;
         display: flex;
         justify-content: center;
@@ -86,9 +86,5 @@
     .sobre-nos .text-sobre p {
         color: #f2f2f2;
     }
-
-
-
-    
 
 }
