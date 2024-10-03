@@ -48,8 +48,13 @@
                             <option value="recreio">Recreio</option>
                         </select>
                     </div>
-                    <li>
-                        <a href="./assets/pages/login/login.html" class="login">login <i class='bx bx-log-in-circle'></i></a>
+                    <li id="user-info" style="display: none;">
+                        <span id="user-name"></span>
+                        <button id="logout" class="logout">Sair</button>
+                    </li>
+                    <li id="login-link">
+                        <a href="./assets/pages/login/login.html" class="login">login <i
+                                class='bx bx-log-in-circle'></i></a>
                     </li>
                 </ul>
                 <i class='bx bx-menu'></i>
@@ -141,6 +146,8 @@
             <p>&copy; 2024 SeuSite. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script src="/assets/js/index.js" type="module"></script>
+    <script src="/assets/js/filiais.js"></script>
 </body>
 
 <script src="./assets/js/index.js"></script>

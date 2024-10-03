@@ -1,58 +1,46 @@
-const filiais = {
-    'barra-da-tijuca': {
-        local: 'Barra da Tijuca',
-        phone: '(21) 1234-5678',
-        address: 'Av. das Américas, 12345',
-    },
-    'copacabana': {
-        local: 'Copacabana',
-        phone: '(21) 2345-6789',
-        address: 'Rua Nossa Senhora de Copacabana, 678',
-    },
-    'botafogo': {
-        local: 'Botafogo',
-        phone: '(21) 3456-7890',
-        address: 'Rua Voluntários da Pátria, 789',
-    },
-    'leblon': {
-        local: 'Leblon',
-        phone: '(21) 4567-8901',
-        address: 'Av. Ataulfo de Paiva, 1010',
-    },
-    'tijuca': {
-        local: 'Tijuca',
-        phone: '(21) 5678-9012',
-        address: 'Rua Conde de Bonfim, 1234',
-    },
-    'recreio': {
-        local: 'Recreio',
-        phone: '(21) 6789-0123',
-        address: 'Av. Genaro de Carvalho, 5678',
-    }
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
+// Configuração do Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBgHghy5MUH8Yldjd9SAT3EkUciC6NtN5A",
+    authDomain: "pzcarioca-bc945.firebaseapp.com",
+    projectId: "pzcarioca-bc945",
+    storageBucket: "pzcarioca-bc945.appspot.com",
+    messagingSenderId: "1066231544171",
+    appId: "1:1066231544171:web:0a40accc799f944410342e",
+    measurementId: "G-V1SZYRTVB8"
 };
 
-function updateContactInfo() {
-    const selectedValue = document.getElementById('filias').value;
-    const contactInfo = filiais[selectedValue];
+// Inicializa o Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    if (contactInfo) {
-        document.getElementById('local').textContent = contactInfo.local;
-        document.getElementById('phone').textContent = contactInfo.phone;
-        document.getElementById('address').textContent = contactInfo.address;
-    }
-}
+// Elementos da interface
+const userInfo = document.getElementById('user-info');
+const loginLink = document.getElementById('login-link');
+const userName = document.getElementById('user-name');
+const logoutButton = document.getElementById('logout');
 
-window.onscroll = function() {
-    const menu = document.querySelector('.menu');
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 100) {
-        menu.classList.add('fixed');
+// Observa mudanças no estado de autenticação
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // Usuário está logado
+        userInfo.style.display = 'flex';
+        loginLink.style.display = 'none';
+        userName.textContent = `Olá, ${user.displayName || user.email}`;
     } else {
-        menu.classList.remove('fixed');
-    };
-};
+        // Usuário não está logado
+        userInfo.style.display = 'none';
+        loginLink.style.display = 'block';
+    }
+});
 
-window.onload = () => {
-    updateContactInfo(); 
-};
+// Função para logout
+logoutButton.addEventListener('click', () => {
+    signOut(auth).then(() => {
+        console.log('Usuário desconectado');
+    }).catch((error) => {
+        console.error('Erro ao desconectar:', error);
+    });
+});

@@ -108,3 +108,24 @@ header {
 .menu .login i {
     color: #222;
 }
+
+#user-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    span {
+        color: #f2f2f2;
+        font-size: 18px;
+    }
+
+    button {
+        background-color: var(--button-color);
+        border: 0px;
+        height: 40px;
+        width: 90px;
+        color: #f2f2f2;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
