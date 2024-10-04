@@ -124,6 +124,14 @@ button[type="submit"] {
   border-radius: 8px;
 }
 
+.login-box a {
+  text-decoration: none;
+  i {
+    color: #222;
+    font-size: 30px;
+  }
+}
+
 .signup-btn {
   height: 40px;
   cursor: pointer;

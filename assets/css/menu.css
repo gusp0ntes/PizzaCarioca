@@ -129,3 +129,8 @@ header {
         cursor: pointer;
     }
 }
+
+.rotated {
+    transition: transform 0.3s ease;
+    transform: rotate(90deg);
+}
