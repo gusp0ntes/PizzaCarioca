@@ -1,8 +1,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
-import { firebaseConfig } from '../config/firebaseConfig.js';
 
-
+const firebaseConfig = {
+    apiKey: "AIzaSyBgHghy5MUH8Yldjd9SAT3EkUciC6NtN5A",
+    authDomain: "pzcarioca-bc945.firebaseapp.com",
+    projectId: "pzcarioca-bc945",
+    storageBucket: "pzcarioca-bc945.appspot.com",
+    messagingSenderId: "1066231544171",
+    appId: "1:1066231544171:web:0a40accc799f944410342e",
+    measurementId: "G-V1SZYRTVB8"
+};
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -14,10 +21,12 @@ const logoutButton = document.getElementById('logout');
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        // Usuário está logado
         userInfo.style.display = 'flex';
         loginLink.style.display = 'none';
         userName.textContent = `Olá, ${user.displayName || user.email}`;
     } else {
+        // Usuário não está logado
         userInfo.style.display = 'none';
         loginLink.style.display = 'block';
     }
@@ -30,4 +39,3 @@ logoutButton.addEventListener('click', () => {
         console.error('Erro ao desconectar:', error);
     });
 });
-
