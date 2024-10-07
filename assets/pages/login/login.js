@@ -1,23 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+import { firebaseConfig } from '../../config/firebaseConfig.js';
 
-// Configuração do Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyBgHghy5MUH8Yldjd9SAT3EkUciC6NtN5A",
-  authDomain: "pzcarioca-bc945.firebaseapp.com",
-  projectId: "pzcarioca-bc945",
-  storageBucket: "pzcarioca-bc945.appspot.com",
-  messagingSenderId: "1066231544171",
-  appId: "1:1066231544171:web:0a40accc799f944410342e",
-  measurementId: "G-V1SZYRTVB8"
-};
-
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-// Elementos da interface
 const googleLoginButton = document.getElementById('google-login');
 
 // Função para login com Google
@@ -27,9 +15,11 @@ googleLoginButton.addEventListener('click', () => {
       const user = result.user;
       console.log('Usuário logado:', user);
       window.location.href = "../../../index.html";
+
     })
     .catch((error) => {
       console.error('Erro ao fazer login:', error);
+      window.location.href = "../../../erro.html";
     });
 });
 
@@ -41,6 +31,7 @@ if (logoutButton) {
       console.log('Usuário desconectado');
     }).catch((error) => {
       console.error('Erro ao desconectar:', error);
+      window.location.href = "../../../erro.html";
     });
   });
 }
