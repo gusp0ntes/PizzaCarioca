@@ -18,9 +18,10 @@ googleButton.addEventListener('click', (e) => {
       const user = result.user;
       console.log('Usuário autenticado:', user);
 
-      window.location.href = "/index.html";
+      window.location.href = "../../../index.html";
     })
     .catch((error) => {
       console.error('Erro durante a autenticação:', error);
+      window.location.href = "../../../erro.html";
     });
 });
