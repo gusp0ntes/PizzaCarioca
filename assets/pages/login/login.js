@@ -26,7 +26,7 @@ googleLoginButton.addEventListener('click', () => {
     .then((result) => {
       const user = result.user;
       console.log('Usuário logado:', user);
-      window.location.href = "index.html";
+      window.location.href = "../../../index.html";
     })
     .catch((error) => {
       console.error('Erro ao fazer login:', error);
