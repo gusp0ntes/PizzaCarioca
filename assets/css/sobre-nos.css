@@ -1,11 +1,8 @@
 .sobre-nos {
-    height: 40vh;
     background-color: #222;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 50px 40px;
-    gap: 20px;
+    padding: 50px 10px;
 }
 
 .carousel {

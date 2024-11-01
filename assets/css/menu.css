@@ -1,136 +1,120 @@
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    z-index: 10;
-}
-
-.menu {
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-.menu-itens {
-    display: flex;
-    align-items: center;
-}
-
-.menu-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 180px;
-    padding: 10px 0;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.menu.fixed .menu-box {
-    /* position: fixed; */
-    top: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    width: 100%;
-    padding: 10px 0;
-}
-
-.menu .bx-menu {
-    color: #f2f2f2;
-    font-size: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-.menu .logo img {
-    width: 140px;
-}
-
-.menu-itens {
-    display: flex;
-    list-style: none;
-}
-
-.menu-itens li {
-    padding-right: 50px;
-}
-
-.menu-itens li a {
+a {
+    color: #fff;
     text-decoration: none;
-    color: #f2f2f2;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
-.menu-itens li:last-child {
-    padding-right: 0;
+a:hover {
+    opacity: 0.7;
 }
 
-.menu .filias {
+.logo {
+    font-size: 23px;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Podkova", serif;
+    background: #222;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
     display: flex;
     align-items: center;
-    padding-right: 50px;
 }
 
-.menu .filias i {
-    color: rgb(228, 110, 0);
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
 }
 
-.menu select {
-    border: 0px;
+.filias {
+    display: flex;
+    align-items: center;
+    margin: 0px 20px 0px;
+    color: #fff;
+}
+
+.filias select {
     background: transparent;
-    color: #f2f2f2;
+    color: #fff;
     outline: none;
+    border: 0px;
 }
 
-.menu select option {
-    color: #222;
+.filias option {
+    color: #23232e;
 }
 
-.menu .login {
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    color: #222;
+.mobile-menu {
+    display: none;
+    cursor: pointer;
 }
 
-.menu .login i {
-    color: #222;
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 6px;
 }
 
 #user-info {
     display: flex;
     gap: 20px;
+    color: #fff;
     align-items: center;
+}
 
-    span {
-        color: #f2f2f2;
-        font-size: 18px;
+#user-info button {
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 100vw;
+        height: 92vh;
+        background: #222;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 10;
     }
 
-    button {
-        background-color: var(--button-color);
-        border: 0px;
-        height: 40px;
-        width: 90px;
-        color: #f2f2f2;
-        border-radius: 8px;
-        cursor: pointer;
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
     }
 }
 
-.rotated {
-    transition: transform 0.3s ease;
-    transform: rotate(90deg);
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

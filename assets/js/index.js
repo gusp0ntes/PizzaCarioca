@@ -22,20 +22,71 @@ const logoutButton = document.getElementById('logout');
 onAuthStateChanged(auth, (user) => {
     if (user) {
         // Usuário está logado
-        userInfo.style.display = 'flex';
-        loginLink.style.display = 'none';
-        userName.textContent = `Olá, ${user.displayName || user.email}`;
+        if (userInfo && loginLink && userName) {
+            userInfo.style.display = 'flex';
+            loginLink.style.display = 'none';
+            userName.textContent = `Olá, ${user.displayName || user.email}`;
+        }
     } else {
         // Usuário não está logado
-        userInfo.style.display = 'none';
-        loginLink.style.display = 'block';
+        if (userInfo && loginLink) {
+            userInfo.style.display = 'none';
+            loginLink.style.display = 'block';
+        }
     }
 });
 
-logoutButton.addEventListener('click', () => {
-    signOut(auth).then(() => {
-        console.log('Usuário desconectado');
-    }).catch((error) => {
-        console.error('Erro ao desconectar:', error);
+if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        signOut(auth).then(() => {
+            console.log('Usuário desconectado');
+        }).catch((error) => {
+            console.error('Erro ao desconectar:', error);
+        });
     });
-});
+}
+
+class MobileNavbar {
+    constructor(mobileMenu, navList, navLinks) {
+        this.mobileMenu = document.querySelector(mobileMenu);
+        this.navList = document.querySelector(navList);
+        this.navLinks = document.querySelectorAll(navLinks);
+        this.activeClass = "active";
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    animateLinks() {
+        this.navLinks.forEach((link, index) => {
+            link.style.animation
+                ? (link.style.animation = "")
+                : (link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`);
+        });
+    }
+
+    handleClick() {
+        this.navList.classList.toggle(this.activeClass);
+        this.animateLinks();
+    }
+
+    addClickEvent() {
+        this.mobileMenu.addEventListener("click", this.handleClick);
+    }
+
+    init() {
+        if (this.mobileMenu) {
+            this.addClickEvent();
+        }
+        return this;
+    }
+}
+
+// Inicializa o menu mobile
+const mobileNavbar = new MobileNavbar(
+    ".mobile-menu",
+    ".nav-list",
+    ".nav-list li"
+);
+mobileNavbar.init();
+
+
+mobileNavbar.init();

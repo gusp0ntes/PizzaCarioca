@@ -26,14 +26,16 @@
 </head>
 
 <body>
-     <header>
+    <header>
         <div class="menu">
-            <div class="menu-box">
-                <div class="logo">
-                    <img src="./assets/image/2.png" alt="Logo da Pizzaria Carioca">
+            <nav>
+                <a class="logo" href="/">PizzaNetRj</a>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
-                <i class='bx bx-menu' id="menu-icon"></i>
-                <ul class="menu-itens" id="menu-itens">
+                <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="#cardapio">Cardápio</a></li>
@@ -54,16 +56,13 @@
                         <button id="logout" class="logout">Sair</button>
                     </li>
                     <li id="login-link">
-                        <a href="./assets/pages/login/login.html" class="login">Login <i
-                                class='bx bx-log-in-circle'></i></a>
+                        <a href="./assets/pages/login/login.html" class="login">Login <i class='bx bx-log-in-circle'></i></a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
-
-
     </header>
-
+    
     <section class="home" id="home">
         <div class="chamada">
             <h2>Bem vindo a</h2>
@@ -154,6 +153,5 @@
 
 <script src="./assets/js/slide.js"></script>
 <script src="./assets/js/filiais.js"></script>
-<script type="module" src="./assets/js/index.js"></script>
 
 </html>
