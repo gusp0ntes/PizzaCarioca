@@ -21,14 +21,14 @@ const logoutButton = document.getElementById('logout');
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        // Usuário está logado
+        console.log("Usuário detectado:", user); // Adicione este log para depuração
         if (userInfo && loginLink && userName) {
             userInfo.style.display = 'flex';
             loginLink.style.display = 'none';
             userName.textContent = `Olá, ${user.displayName || user.email}`;
         }
     } else {
-        // Usuário não está logado
+        console.log("Nenhum usuário logado"); // Log para quando o usuário está desconectado
         if (userInfo && loginLink) {
             userInfo.style.display = 'none';
             loginLink.style.display = 'block';
