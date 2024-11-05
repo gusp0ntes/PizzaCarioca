@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pedido.css">
+    <title>Pedido</title>
+</head>
+<body>
+    <div class="pedido">
+        <div id="progress-container">
+            <h1>Check-in</h1>
+            <div class="progress-bar"></div>
+            <div id="progress-dots-container">
+                <div class="dot" id="dot1">1</div>
+                <div class="dot" id="dot2">2</div>
+                <div class="dot" id="dot3">3</div>
+                <div class="dot" id="dot4">4</div>
+                <div class="dot" id="dot5">5</div>
+                <div class="dot" id="dot6">6</div>
+            </div>
+        </div>
+
+        <form id="pizza-order-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" maxlength="8" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" readonly required>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" required>
+
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento">
+
+            <label for="pizza-type">Tipo de Pizza:</label>
+            <select id="pizza-type" required>
+                <option value="">Selecione uma opção</option>
+                <option value="marguerita">Marguerita</option>
+                <option value="calabresa">Calabresa</option>
+                <option value="quatro-queijos">Quatro Queijos</option>
+                <option value="portuguesa">Portuguesa</option>
+                <option value="frango-catupiry">Frango com Catupiry</option>
+                <option value="meio-a-meio">Meio a Meio</option>
+            </select>
+
+            <div id="meio-a-meio-container" style="display: none;">
+                <label for="sabor1">Escolha o primeiro sabor:</label>
+                <select id="sabor1">
+                    <option value="marguerita">Marguerita</option>
+                    <option value="calabresa">Calabresa</option>
+                    <option value="quatro-queijos">Quatro Queijos</option>
+                    <option value="portuguesa">Portuguesa</option>
+                    <option value="frango-catupiry">Frango com Catupiry</option>
+                </select>
+
+                <label for="sabor2">Escolha o segundo sabor:</label>
+                <select id="sabor2">
+                    <option value="marguerita">Marguerita</option>
+                    <option value="calabresa">Calabresa</option>
+                    <option value="quatro-queijos">Quatro Queijos</option>
+                    <option value="portuguesa">Portuguesa</option>
+                    <option value="frango-catupiry">Frango com Catupiry</option>
+                </select>
+            </div>
+
+            <label for="size">Tamanho:</label>
+            <select id="size" required>
+                <option value="">Selecione um tamanho</option>
+                <option value="pequeno">Pequeno</option>
+                <option value="medio">Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+
+            <label for="adicionais">Adicionais:</label>
+            <select id="adicionais" multiple>
+                <option value="extra-queijo">Extra Queijo</option>
+                <option value="azeitona">Azeitona</option>
+                <option value="bacon">Bacon</option>
+                <option value="milho">Milho</option>
+                <option value="catupiry">Catupiry</option>
+            </select>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

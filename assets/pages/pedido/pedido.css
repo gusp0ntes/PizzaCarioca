@@ -1,0 +1,111 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0px;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .pedido {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 18px #22222267;
+    border-radius: 8px;
+    height: auto;
+    width: 500px;
+    margin: 0px 20px;
+    padding: 20px;
+  }
+  
+  #progress-container h1 {
+    font-size: 30px;
+  }
+  
+  #progress-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    height: 4px;
+    background-color: #b80c29;
+    top: 65px; /* Aumente o valor se necessário */
+    left: 0;
+    width: 0;
+    z-index: 1;
+  }
+  
+  #progress-dots-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Ajuste a margem se necessário */
+    z-index: 2;
+    position: relative;
+  }
+  
+  
+  .dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dot.active {
+    background-color: #222;
+    color: #fff;
+  
+  }
+  
+  .dot:not(:last-child)::after {
+    /* content: '';
+    position: absolute;
+    width: calc(100% + 10px);
+    height: 4px;
+    background-color: #e0e0e0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; */
+  }
+  
+  #pizza-order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #pizza-order-form label {
+    font-weight: 700;
+  
+  }
+  
+  #pizza-order-form input {
+    height: 40px;
+    outline: none;
+    padding: 0px 10px;
+    border-radius: 05px;
+    box-shadow: 0px 0px 18px #22222256;
+  }
+  
+  button[type="submit"] {
+    height: 40px;
+    cursor: pointer;
+    background-color: #b80c29;
+    color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
